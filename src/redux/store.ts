@@ -1,7 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit';
+import { cartReducer } from './features/cart/cartSlice';
+import { productReducer } from './features/products/productsSlice';
+// import cartReducer from './features/cart/cartSlice';
 
 const store = configureStore({
-  reducer: {},
+  reducer: {
+    cart: cartReducer,
+    product: productReducer,
+  },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(),
 });
 
